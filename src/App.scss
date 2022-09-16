@@ -11,6 +11,12 @@
   pointer-events: none;
 }
 
+.temp-logout-btn {
+  height: 33px;
+  width: 100px;
+  margin: 20px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
