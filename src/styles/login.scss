@@ -1,0 +1,26 @@
+.container-userlogin {
+    width: 400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+
+    & .formcard-userlogin {
+        flex: 1;
+    }
+
+    #login-form {
+        display: grid;
+        row-gap: 20px;
+    }
+
+    .submit-btn-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            margin-left: 10px;
+        }
+    }
+}

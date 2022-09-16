@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import LoginPage from "./Login";
 import TaskView from "./TaskView";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { storageService } from "../services/storageService";
+
+export const authCtx = createContext<any>(null);
 
 const BasePage: React.FC<{}> = () => {
   let navigate = useNavigate();
@@ -28,10 +30,12 @@ const BasePage: React.FC<{}> = () => {
   }, [authenticated, navigate]);
 
   return (
-    <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/" element={<TaskView />} />
-    </Routes>
+    <authCtx.Provider value={{ authenticated, setAuthenticated }}>
+      <Routes>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<TaskView />} />
+      </Routes>
+    </authCtx.Provider>
   );
 };
 
