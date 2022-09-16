@@ -1,14 +1,9 @@
 import React from "react";
+import BasePage from "./pages";
 import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <div className="App-logo">
-        <p>🧪</p>
-      </div>
-    </div>
-  );
+  return <BasePage />;
 }
 
 export default App;
